@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Rerender sidebar
-      run: python ./docs/rerenderSidebar.py
+      run: |
+          npm install docsify-tools
+          docsify-auto-sidebar -d docs
     - run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
