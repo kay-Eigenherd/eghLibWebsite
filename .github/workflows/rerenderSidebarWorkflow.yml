@@ -12,6 +12,12 @@ jobs:
       run: |
           cd ./docs
           python3 rerenderSidebar.py
+    #Git push changes
+    - run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "rerendered sidebar"
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
