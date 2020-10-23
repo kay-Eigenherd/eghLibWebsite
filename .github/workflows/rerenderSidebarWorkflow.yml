@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  greet:
+  singleJob:
     runs-on: ubuntu-latest
     steps:
     - name: Rerender sidebar
-      run: python .docs/rerenderSidebar.py
+      run: python ./docs/rerenderSidebar.py
     - run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
