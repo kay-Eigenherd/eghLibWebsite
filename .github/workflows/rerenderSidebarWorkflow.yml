@@ -9,13 +9,8 @@ jobs:
     steps:
     - name: Rerender sidebar
       run: |
-          npm install docsify-tools
-          docsify-auto-sidebar -d docs
-    - run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "generated"
+          cd ./docs
+          python rerenderSidebar.py
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
